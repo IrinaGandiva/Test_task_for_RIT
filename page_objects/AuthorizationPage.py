@@ -23,3 +23,9 @@ class AuthorizationPage(BasePage):
 
     def get_text_of_authorized_user(self):
         return self._get_element_text(*self.USER_INFO)
+
+    def authorization(self, name, password):
+        self.input_username_into_authorization_form(name)
+        self.click_confirmation_button()
+        self.input_password_into_authorization_form(password)
+        self.click_confirmation_button()
